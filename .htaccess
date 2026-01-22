@@ -1,0 +1,12 @@
+RewriteEngine On
+RewriteBase /journal-app-website/
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^([^/]+)/?$ $1.php [L]
+
+ErrorDocument 400 /journal-app-website/404.php
+ErrorDocument 401 /journal-app-website/404.php
+ErrorDocument 403 /journal-app-website/404.php
+ErrorDocument 404 /journal-app-website/404.php
+ErrorDocument 500 /journal-app-website/404.php
